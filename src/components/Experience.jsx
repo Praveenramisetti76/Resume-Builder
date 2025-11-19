@@ -15,54 +15,56 @@ export default function Experience({ data, setData }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">💼 Experience</h2>
-      <div className="space-y-4">
+    <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-shadow">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2">💼 Work Experience</h2>
+      <div className="space-y-6">
         {data.map((exp, i) => (
-          <div key={i} className="p-4 border-2 border-gray-200 rounded-lg space-y-3">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Company *</label>
-              <input
-                placeholder="e.g., Tech Company Inc."
-                value={exp.company}
-                onChange={(e) => handleChange(i, "company", e.target.value)}
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-              />
+          <div key={i} className="p-6 border-2 border-indigo-100 rounded-xl space-y-4 bg-gradient-to-br from-white to-indigo-50 hover:border-indigo-300 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Company *</label>
+                <input
+                  placeholder="e.g., Tech Company Inc."
+                  value={exp.company}
+                  onChange={(e) => handleChange(i, "company", e.target.value)}
+                  className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Job Title *</label>
+                <input
+                  placeholder="e.g., Senior Developer"
+                  value={exp.role}
+                  onChange={(e) => handleChange(i, "role", e.target.value)}
+                  className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
+                />
+              </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Job Title *</label>
-              <input
-                placeholder="e.g., Senior Developer"
-                value={exp.role}
-                onChange={(e) => handleChange(i, "role", e.target.value)}
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Duration *</label>
+              <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Duration *</label>
               <input
                 placeholder="e.g., Jan 2022 - Present"
                 value={exp.duration}
                 onChange={(e) => handleChange(i, "duration", e.target.value)}
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Description</label>
+              <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Description</label>
               <textarea
-                placeholder="Describe your responsibilities and achievements"
+                placeholder="Describe your responsibilities and key achievements..."
                 value={exp.description || ""}
                 onChange={(e) => handleChange(i, "description", e.target.value)}
-                rows="3"
-                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                rows="4"
+                className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base resize-none"
               />
             </div>
             {data.length > 1 && (
               <button
                 onClick={() => removeExperience(i)}
-                className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition"
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                <FiTrash2 /> Remove
+                <FiTrash2 size={18} /> Remove Experience
               </button>
             )}
           </div>
@@ -70,9 +72,9 @@ export default function Experience({ data, setData }) {
       </div>
       <button
         onClick={addExperience}
-        className="w-full mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition"
+        className="w-full mt-6 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       >
-        <FiPlus /> Add Experience
+        <FiPlus size={18} /> Add More Experience
       </button>
     </div>
   );

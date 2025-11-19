@@ -58,26 +58,26 @@ export default function ViewResume() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900">{resume.title}</h1>
-            <p className="text-gray-600 mt-2">by {resume.personal.name}</p>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">{resume.title}</h1>
+            <p className="text-gray-600 mt-2 text-lg">by <span className="font-semibold text-indigo-600">{resume.personal.name}</span></p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Link
               to={`/edit/${id}`}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <FiEdit2 /> Edit
+              <FiEdit2 size={18} /> Edit
             </Link>
             <button
               onClick={handleDelete}
-              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition"
+              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <FiTrash2 /> Delete
+              <FiTrash2 size={18} /> Delete
             </button>
           </div>
         </div>
@@ -85,13 +85,13 @@ export default function ViewResume() {
         {/* Back Button */}
         <Link
           to="/resumes"
-          className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 mb-6 font-semibold"
+          className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 mb-8 font-semibold text-lg hover:gap-3 transition-all"
         >
-          <FiArrowLeft /> Back to Resumes
+          <FiArrowLeft size={18} /> Back to Dashboard
         </Link>
 
         {/* Resume Content */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8 border border-gray-200 hover:shadow-3xl transition-shadow">
           <ResumePreview
             ref={resumeRef}
             personal={resume.personal}
@@ -102,7 +102,9 @@ export default function ViewResume() {
         </div>
 
         {/* Download Button */}
-        <DownloadButton resumeRef={resumeRef} fileName={resume.title} />
+        <div className="sticky bottom-6">
+          <DownloadButton resumeRef={resumeRef} fileName={resume.title} />
+        </div>
       </div>
     </div>
   );

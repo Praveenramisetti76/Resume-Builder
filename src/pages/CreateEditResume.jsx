@@ -71,7 +71,7 @@ export default function CreateEditResume() {
       } else {
         const newResume = await resumeService.createResume(formData);
         toast.success('Resume created successfully');
-        navigate(`/edit/${newResume.id}`);
+        navigate(`/view/${newResume.id}`);
       }
     } catch {
       toast.error(isEdit ? 'Failed to update resume' : 'Failed to create resume');
@@ -89,46 +89,46 @@ export default function CreateEditResume() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
               {isEdit ? '✏️ Edit Resume' : '📝 Create Resume'}
             </h1>
-            <p className="text-gray-600 mt-2">
-              {isEdit ? 'Update your resume' : 'Build your professional resume'}
+            <p className="text-gray-600 mt-3 text-lg">
+              {isEdit ? 'Update your professional profile' : 'Build your professional resume in minutes'}
             </p>
           </div>
           <div className="flex gap-3">
             <Link
               to="/resumes"
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-gray-900 border-2 border-gray-300 rounded-lg transition"
+              className="flex items-center gap-2 px-6 py-3 text-white bg-gray-700 hover:bg-gray-800 border-2 border-gray-700 rounded-lg transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
             >
-              <FiArrowLeft /> Back
+              <FiArrowLeft /> Back to Dashboard
             </Link>
           </div>
         </div>
 
         {/* Resume Title Input */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-200 hover:shadow-xl transition-shadow">
+          <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">
             Resume Title
           </label>
           <input
             type="text"
             value={formData.title}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-            placeholder="e.g., Software Developer Resume 2024"
-            className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+            placeholder="e.g., Senior Developer Resume 2024"
+            className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
           />
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Form Section */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-8">
             <PersonalInfo
               data={formData.personal}
               setData={(newPersonal) =>
@@ -161,17 +161,17 @@ export default function CreateEditResume() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-lg"
+              className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 disabled:from-gray-400 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <FiSave /> {saving ? 'Saving...' : 'Save Resume'}
+              <FiSave size={20} /> {saving ? 'Saving...' : 'Save & Continue'}
             </button>
           </div>
 
           {/* Preview Section */}
           <div className="lg:col-span-1">
             <div className="sticky top-24">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">📄 Preview</h2>
-              <div className="bg-white rounded-lg shadow-md p-4 max-h-96 overflow-y-auto border-2 border-gray-200">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center gap-2">📄 Live Preview</h2>
+              <div className="bg-white rounded-2xl shadow-2xl p-6 max-h-[70vh] overflow-y-auto border-2 border-gray-100 hover:shadow-3xl transition-shadow">
                 <ResumePreview
                   ref={resumeRef}
                   personal={formData.personal}
@@ -181,10 +181,12 @@ export default function CreateEditResume() {
                 />
               </div>
               {isEdit && (
-                <DownloadButton
-                  resumeRef={resumeRef}
-                  fileName={formData.title || 'resume'}
-                />
+                <div className="mt-6">
+                  <DownloadButton
+                    resumeRef={resumeRef}
+                    fileName={formData.title || 'resume'}
+                  />
+                </div>
               )}
             </div>
           </div>

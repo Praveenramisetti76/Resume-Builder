@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { FiDownload } from "react-icons/fi";
 
 export default function DownloadButton({ resumeRef, fileName = "resume" }) {
+  const [isDownloading, setIsDownloading] = useState(false);
+
   const handleDownloadPDF = async () => {
     if (!resumeRef.current) return;
 
     try {
+      setIsDownloading(true);
       // Get the resume element
       const element = resumeRef.current;
 
@@ -51,16 +54,19 @@ export default function DownloadButton({ resumeRef, fileName = "resume" }) {
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("Failed to download PDF. Please try again.");
+    } finally {
+      setIsDownloading(false);
     }
   };
 
   return (
-    <div className="flex gap-3 mt-6">
+    <div className="flex gap-3">
       <button
         onClick={handleDownloadPDF}
-        className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-lg"
+        disabled={isDownloading}
+        className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 disabled:from-gray-400 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       >
-        <FiDownload /> Download PDF
+        <FiDownload size={20} /> {isDownloading ? 'Downloading...' : 'Download PDF'}
       </button>
     </div>
   );
