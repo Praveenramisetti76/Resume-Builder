@@ -1,0 +1,38 @@
+{
+  "resumes": [
+    {
+      "id": "1",
+      "title": "John Doe Resume",
+      "personal": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "phone": "+1-234-567-8900",
+        "summary": "Experienced software developer with 5+ years of expertise in full-stack development."
+      },
+      "education": [
+        {
+          "id": 1,
+          "degree": "Bachelor of Science",
+          "institution": "Tech University",
+          "field": "Computer Science",
+          "year": "2020"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "company": "Tech Company",
+          "role": "Senior Developer",
+          "duration": "2022-Present",
+          "description": "Led development of full-stack web applications."
+        }
+      ],
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB"
+      ]
+    }
+  ]
+}
