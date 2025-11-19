@@ -4,15 +4,40 @@ const ResumePreview = forwardRef(({ personal, education, experience, skills }, r
   return (
     <div
       ref={ref}
-      className="bg-white p-8 shadow-lg rounded-lg border-4 border-indigo-600 w-full"
-      style={{ minHeight: "100vh", fontFamily: "Calibri, sans-serif" }}
+      style={{ 
+        backgroundColor: "#ffffff",
+        color: "#000000",
+        fontFamily: "Arial, sans-serif",
+        padding: "40px",
+        margin: "0",
+        width: "100%",
+        boxSizing: "border-box",
+        lineHeight: "1.6"
+      }}
     >
       {/* Header */}
-      <div className="text-center border-b-2 border-indigo-600 pb-4 mb-6">
-        <h1 className="text-4xl font-bold text-indigo-900 mb-2">
+      <div style={{
+        textAlign: "center",
+        borderBottom: "3px solid #4f46e5",
+        paddingBottom: "20px",
+        marginBottom: "25px"
+      }}>
+        <h1 style={{
+          fontSize: "32px",
+          fontWeight: "bold",
+          color: "#1e1b4b",
+          margin: "0 0 15px 0"
+        }}>
           {personal.name || "Your Name"}
         </h1>
-        <div className="flex justify-center gap-4 text-sm text-gray-700 flex-wrap">
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "15px",
+          flexWrap: "wrap",
+          fontSize: "13px",
+          color: "#404040"
+        }}>
           <span>{personal.email || "your@email.com"}</span>
           <span>•</span>
           <span>{personal.phone || "1234567890"}</span>
@@ -21,32 +46,76 @@ const ResumePreview = forwardRef(({ personal, education, experience, skills }, r
 
       {/* Professional Summary */}
       {personal.summary && (
-        <section className="mb-6">
-          <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-600 pb-2 mb-3">
+        <section style={{ marginBottom: "20px" }}>
+          <h3 style={{
+            fontSize: "16px",
+            fontWeight: "bold",
+            color: "#1e1b4b",
+            borderBottom: "2px solid #4f46e5",
+            paddingBottom: "8px",
+            marginBottom: "12px",
+            margin: "0 0 12px 0"
+          }}>
             Professional Summary
           </h3>
-          <p className="text-gray-700 leading-relaxed">{personal.summary}</p>
+          <p style={{
+            color: "#404040",
+            fontSize: "13px",
+            lineHeight: "1.6",
+            margin: "0"
+          }}>{personal.summary}</p>
         </section>
       )}
 
       {/* Experience */}
       {experience.length > 0 && experience[0].company && (
-        <section className="mb-6">
-          <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-600 pb-2 mb-3">
+        <section style={{ marginBottom: "20px" }}>
+          <h3 style={{
+            fontSize: "16px",
+            fontWeight: "bold",
+            color: "#1e1b4b",
+            borderBottom: "2px solid #4f46e5",
+            paddingBottom: "8px",
+            marginBottom: "12px",
+            margin: "0 0 12px 0"
+          }}>
             💼 Work Experience
           </h3>
-          <div className="space-y-4">
+          <div>
             {experience.map((exp, i) => (
-              <div key={i}>
-                <div className="flex justify-between items-start">
+              <div key={i} style={{ marginBottom: "15px" }}>
+                <div style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  marginBottom: "5px"
+                }}>
                   <div>
-                    <p className="font-bold text-gray-900">{exp.role || "Position"}</p>
-                    <p className="text-gray-700">{exp.company || "Company"}</p>
+                    <p style={{
+                      fontWeight: "bold",
+                      color: "#000000",
+                      fontSize: "14px",
+                      margin: "0 0 3px 0"
+                    }}>{exp.role || "Position"}</p>
+                    <p style={{
+                      color: "#404040",
+                      fontSize: "13px",
+                      margin: "0"
+                    }}>{exp.company || "Company"}</p>
                   </div>
-                  <span className="text-gray-700 text-sm">{exp.duration || "Duration"}</span>
+                  <span style={{
+                    color: "#404040",
+                    fontSize: "12px",
+                    fontStyle: "italic"
+                  }}>{exp.duration || "Duration"}</span>
                 </div>
                 {exp.description && (
-                  <p className="text-gray-700 mt-2 text-sm leading-relaxed">{exp.description}</p>
+                  <p style={{
+                    color: "#404040",
+                    fontSize: "12px",
+                    lineHeight: "1.5",
+                    margin: "8px 0 0 0"
+                  }}>{exp.description}</p>
                 )}
               </div>
             ))}
@@ -56,22 +125,47 @@ const ResumePreview = forwardRef(({ personal, education, experience, skills }, r
 
       {/* Education */}
       {education.length > 0 && education[0].degree && (
-        <section className="mb-6">
-          <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-600 pb-2 mb-3">
+        <section style={{ marginBottom: "20px" }}>
+          <h3 style={{
+            fontSize: "16px",
+            fontWeight: "bold",
+            color: "#1e1b4b",
+            borderBottom: "2px solid #4f46e5",
+            paddingBottom: "8px",
+            marginBottom: "12px",
+            margin: "0 0 12px 0"
+          }}>
             🎓 Education
           </h3>
-          <div className="space-y-3">
+          <div>
             {education.map((edu, i) => (
-              <div key={i}>
-                <div className="flex justify-between items-start">
+              <div key={i} style={{ marginBottom: "12px" }}>
+                <div style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start"
+                }}>
                   <div>
-                    <p className="font-bold text-gray-900">{edu.degree || "Degree"}</p>
-                    <p className="text-gray-700">
+                    <p style={{
+                      fontWeight: "bold",
+                      color: "#000000",
+                      fontSize: "14px",
+                      margin: "0 0 3px 0"
+                    }}>{edu.degree || "Degree"}</p>
+                    <p style={{
+                      color: "#404040",
+                      fontSize: "13px",
+                      margin: "0"
+                    }}>
                       {edu.institution || "Institution"}
                       {edu.field && ` • ${edu.field}`}
                     </p>
                   </div>
-                  <span className="text-gray-700 text-sm">{edu.year || "Year"}</span>
+                  <span style={{
+                    color: "#404040",
+                    fontSize: "12px",
+                    fontStyle: "italic"
+                  }}>{edu.year || "Year"}</span>
                 </div>
               </div>
             ))}
@@ -82,16 +176,36 @@ const ResumePreview = forwardRef(({ personal, education, experience, skills }, r
       {/* Skills */}
       {skills.length > 0 && skills[0] && (
         <section>
-          <h3 className="text-lg font-bold text-indigo-900 border-b-2 border-indigo-600 pb-2 mb-3">
+          <h3 style={{
+            fontSize: "16px",
+            fontWeight: "bold",
+            color: "#1e1b4b",
+            borderBottom: "2px solid #4f46e5",
+            paddingBottom: "8px",
+            marginBottom: "12px",
+            margin: "0 0 12px 0"
+          }}>
             ⭐ Skills
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "8px"
+          }}>
             {skills.map(
               (skill, i) =>
                 skill && (
                   <span
                     key={i}
-                    className="bg-indigo-100 text-indigo-900 px-3 py-1 rounded-full text-sm font-medium"
+                    style={{
+                      backgroundColor: "#e0e7ff",
+                      color: "#312e81",
+                      padding: "6px 12px",
+                      borderRadius: "20px",
+                      fontSize: "12px",
+                      fontWeight: "500",
+                      display: "inline-block"
+                    }}
                   >
                     {skill}
                   </span>
@@ -103,5 +217,7 @@ const ResumePreview = forwardRef(({ personal, education, experience, skills }, r
     </div>
   );
 });
+
+ResumePreview.displayName = "ResumePreview";
 
 export default ResumePreview;

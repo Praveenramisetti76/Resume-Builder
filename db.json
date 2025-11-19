@@ -33,36 +33,6 @@
         "Node.js",
         "MongoDB"
       ]
-    },
-    {
-      "id": "a2c8",
-      "title": "jsjf",
-      "personal": {
-        "name": "fdfda",
-        "email": "fsf",
-        "phone": "safd",
-        "summary": "afsf"
-      },
-      "education": [
-        {
-          "degree": "afdf",
-          "institution": "afdf",
-          "field": "afsdf",
-          "year": "afdfds"
-        }
-      ],
-      "experience": [
-        {
-          "company": "sfasf",
-          "role": "safd",
-          "duration": "afd",
-          "description": "afdsf"
-        }
-      ],
-      "skills": [
-        "adf",
-        "adfdf"
-      ]
     }
   ]
 }

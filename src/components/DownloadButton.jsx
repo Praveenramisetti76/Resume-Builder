@@ -1,28 +1,38 @@
 import React, { useState } from "react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 import { FiDownload } from "react-icons/fi";
+import { toast } from "react-toastify";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 export default function DownloadButton({ resumeRef, fileName = "resume" }) {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleDownloadPDF = async () => {
-    if (!resumeRef.current) return;
+    if (!resumeRef.current) {
+      toast.error("Resume not found");
+      return;
+    }
 
     try {
       setIsDownloading(true);
-      // Get the resume element
+      toast.info("Generating PDF... Please wait");
+
       const element = resumeRef.current;
 
-      // Create canvas from HTML
+      // Convert HTML to Canvas
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
-        logging: false,
+        allowTaint: true,
         backgroundColor: "#ffffff",
+        logging: false,
+        imageTimeout: 5000,
       });
 
+      // Get canvas dimensions
       const imgData = canvas.toDataURL("image/png");
+      const pdfWidth = 210; // A4 width in mm
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
       // Create PDF
       const pdf = new jsPDF({
@@ -31,29 +41,36 @@ export default function DownloadButton({ resumeRef, fileName = "resume" }) {
         format: "a4",
       });
 
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
+      const pageHeight = 297; // A4 height in mm
       let heightLeft = pdfHeight;
       let position = 0;
 
       // Add first page
       pdf.addImage(imgData, "PNG", 0, position, pdfWidth, pdfHeight);
-      heightLeft -= pdf.internal.pageSize.getHeight();
+      heightLeft -= pageHeight;
 
-      // Add additional pages if needed
+      // Add additional pages if content is longer
       while (heightLeft > 0) {
         position = heightLeft - pdfHeight;
         pdf.addPage();
         pdf.addImage(imgData, "PNG", 0, position, pdfWidth, pdfHeight);
-        heightLeft -= pdf.internal.pageSize.getHeight();
+        heightLeft -= pageHeight;
       }
 
-      // Download the PDF
-      pdf.save(`${fileName}.pdf`);
+      // Clean filename
+      const cleanFileName = fileName
+        .trim()
+        .replace(/[^a-z0-9\s]/gi, "")
+        .replace(/\s+/g, "_")
+        .toLowerCase() || "resume";
+
+      // Save PDF
+      pdf.save(`${cleanFileName}.pdf`);
+
+      toast.success("✅ Resume downloaded successfully!");
     } catch (error) {
       console.error("Error generating PDF:", error);
-      alert("Failed to download PDF. Please try again.");
+      toast.error("❌ Failed to download PDF. Check console for details.");
     } finally {
       setIsDownloading(false);
     }
@@ -64,9 +81,9 @@ export default function DownloadButton({ resumeRef, fileName = "resume" }) {
       <button
         onClick={handleDownloadPDF}
         disabled={isDownloading}
-        className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 disabled:from-gray-400 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        className="flex-1 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
       >
-        <FiDownload size={20} /> {isDownloading ? 'Downloading...' : 'Download PDF'}
+        <FiDownload size={20} /> {isDownloading ? 'Generating...' : 'Download PDF'}
       </button>
     </div>
   );
