@@ -19,10 +19,10 @@ export default function Experience({ data, setData }) {
       <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2">💼 Work Experience</h2>
       <div className="space-y-6">
         {data.map((exp, i) => (
-          <div key={i} className="p-6 border-2 border-indigo-100 rounded-xl space-y-4 bg-gradient-to-br from-white to-indigo-50 hover:border-indigo-300 transition-colors">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div key={i} className="p-6 border-2 border-indigo-100 rounded-xl space-y-6 bg-gradient-to-br from-white to-indigo-50 hover:border-indigo-300 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Company *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Company *</label>
                 <input
                   placeholder="e.g., Tech Company Inc."
                   value={exp.company}
@@ -31,7 +31,7 @@ export default function Experience({ data, setData }) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Job Title *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Job Title *</label>
                 <input
                   placeholder="e.g., Senior Developer"
                   value={exp.role}
@@ -41,7 +41,7 @@ export default function Experience({ data, setData }) {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Duration *</label>
+              <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Duration *</label>
               <input
                 placeholder="e.g., Jan 2022 - Present"
                 value={exp.duration}
@@ -50,7 +50,7 @@ export default function Experience({ data, setData }) {
               />
             </div>
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Description</label>
+              <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Description</label>
               <textarea
                 placeholder="Describe your responsibilities and key achievements..."
                 value={exp.description || ""}

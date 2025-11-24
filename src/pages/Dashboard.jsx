@@ -85,41 +85,45 @@ export default function Dashboard() {
 
         {/* Resumes Grid */}
         {!loading && resumes.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resumes.map((resume) => (
               <div
                 key={resume.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 transform hover:-translate-y-1"
               >
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 line-clamp-2">
                     {resume.title}
                   </h3>
-                  <p className="text-gray-600 mb-1">
-                    <strong>Name:</strong> {resume.personal.name}
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    <strong>Email:</strong> {resume.personal.email}
-                  </p>
+                  <div className="space-y-3 mb-6 py-4 border-y border-gray-200">
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Name</p>
+                      <p className="text-gray-800 font-medium">{resume.personal.name}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Email</p>
+                      <p className="text-gray-800 font-medium truncate">{resume.personal.email}</p>
+                    </div>
+                  </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       to={`/view/${resume.id}`}
-                      className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition"
+                      className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
-                      <FiEye /> View
+                      <FiEye size={18} /> View
                     </Link>
                     <Link
                       to={`/edit/${resume.id}`}
-                      className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition"
+                      className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
-                      <FiEdit2 /> Edit
+                      <FiEdit2 size={18} /> Edit
                     </Link>
                     <button
                       onClick={() => handleDelete(resume.id)}
-                      className="flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition"
+                      className="flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
-                      <FiTrash2 /> Delete
+                      <FiTrash2 size={18} /> Delete
                     </button>
                   </div>
                 </div>

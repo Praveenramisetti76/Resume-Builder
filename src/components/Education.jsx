@@ -19,10 +19,10 @@ export default function Education({ data, setData }) {
       <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2">🎓 Education</h2>
       <div className="space-y-6">
         {data.map((edu, i) => (
-          <div key={i} className="p-6 border-2 border-green-100 rounded-xl space-y-4 bg-gradient-to-br from-white to-green-50 hover:border-green-300 transition-colors">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div key={i} className="p-6 border-2 border-green-100 rounded-xl space-y-6 bg-gradient-to-br from-white to-green-50 hover:border-green-300 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Degree *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Degree *</label>
                 <input
                   placeholder="e.g., Bachelor of Science"
                   value={edu.degree}
@@ -31,7 +31,7 @@ export default function Education({ data, setData }) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Graduation Year *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Graduation Year *</label>
                 <input
                   placeholder="e.g., 2020"
                   value={edu.year}
@@ -40,23 +40,25 @@ export default function Education({ data, setData }) {
                 />
               </div>
             </div>
-            <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Institution *</label>
-              <input
-                placeholder="e.g., Tech University"
-                value={edu.institution}
-                onChange={(e) => handleChange(i, "institution", e.target.value)}
-                className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Field of Study</label>
-              <input
-                placeholder="e.g., Computer Science"
-                value={edu.field || ""}
-                onChange={(e) => handleChange(i, "field", e.target.value)}
-                className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Institution *</label>
+                <input
+                  placeholder="e.g., Tech University"
+                  value={edu.institution}
+                  onChange={(e) => handleChange(i, "institution", e.target.value)}
+                  className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Field of Study</label>
+                <input
+                  placeholder="e.g., Computer Science"
+                  value={edu.field || ""}
+                  onChange={(e) => handleChange(i, "field", e.target.value)}
+                  className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
+                />
+              </div>
             </div>
             {data.length > 1 && (
               <button
