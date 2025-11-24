@@ -89,11 +89,11 @@ export default function CreateEditResume() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
-          <div>
+          <div className="flex-1">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
               {isEdit ? '✏️ Edit Resume' : '📝 Create Resume'}
             </h1>
@@ -101,10 +101,10 @@ export default function CreateEditResume() {
               {isEdit ? 'Update your professional profile' : 'Build your professional resume in minutes'}
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 w-full sm:w-auto">
             <Link
               to="/resumes"
-              className="flex items-center gap-2 px-6 py-3 text-white bg-gray-700 hover:bg-gray-800 border-2 border-gray-700 rounded-lg transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 text-white bg-gray-700 hover:bg-gray-800 border-2 border-gray-700 rounded-lg transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
             >
               <FiArrowLeft /> Back to Dashboard
             </Link>
@@ -113,7 +113,7 @@ export default function CreateEditResume() {
 
         {/* Resume Title Input */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-200 hover:shadow-xl transition-shadow">
-          <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">
+          <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-wide">
             Resume Title
           </label>
           <input

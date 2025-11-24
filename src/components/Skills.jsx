@@ -16,10 +16,10 @@ export default function Skills({ data, setData }) {
 
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-shadow">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2">⭐ Skills</h2>
+      <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">⭐ Skills</h2>
       <div className="space-y-4">
         {data.map((skill, i) => (
-          <div key={i} className="flex gap-3 items-center">
+          <div key={i} className="flex gap-3 items-center group">
             <input
               placeholder="e.g., JavaScript, React, Node.js"
               value={skill}
@@ -29,7 +29,7 @@ export default function Skills({ data, setData }) {
             {data.length > 1 && (
               <button
                 onClick={() => removeSkill(i)}
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-4 rounded-lg flex items-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
+                className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg flex items-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg opacity-100 group-hover:opacity-100"
               >
                 <FiTrash2 size={18} />
               </button>
