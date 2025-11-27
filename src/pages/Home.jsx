@@ -19,9 +19,11 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
               Build polished resumes in minutes, not hours
             </p>
-            <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
+            <br />
+            <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto text-center">
               Create a stunning resume with clean templates, real-time preview, and instant PDF export. No design experience needed.
-            </p>
+</p>
+            <br/>
           </div>
 
           {/* Feature Cards */}
@@ -44,7 +46,7 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed">Export your resume as a professional PDF file. Ready to submit to employers instantly.</p>
             </div>
           </div>
-
+                <br/>
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link
@@ -60,7 +62,7 @@ export default function Home() {
               📋 View My Resumes
             </Link>
           </div>
-
+            <br/>
           {/* Additional Info */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-10 text-center">
             <p className="text-gray-700 text-lg mb-4">
