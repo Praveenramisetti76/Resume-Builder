@@ -2,7 +2,7 @@
   "resumes": [
     {
       "id": "1",
-      "title": "John Doe Resume",
+      "title": "example  Resume",
       "personal": {
         "name": "John Doe",
         "email": "john@example.com",
@@ -33,6 +33,45 @@
         "Node.js",
         "MongoDB"
       ]
+    },
+    {
+  "id": "1",
+  "title": "Praveen Ramisetti Resume",
+  "personal": {
+    "name": "Praveen Ramisetti",
+    "email": "praveenr76am@gmail.com",
+    "phone": "+91-98765-43210",
+    "summary": "Passionate and dedicated developer with hands-on experience in building modern web applications, real-time systems, and AI-integrated solutions."
+  },
+  "education": [
+    {
+      "id": 1,
+      "degree": "Bachelor of Technology",
+      "institution": "Your University Name",
+      "field": "Computer Science and Engineering",
+      "year": "202X"
     }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "Addwise Tech",
+      "role": "Software Developer",
+      "duration": "2023-Present",
+      "description": "Worked on developing scalable web applications, integrating APIs, optimizing front-end performance, and collaborating with cross-functional teams to deliver high-quality software solutions."
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Python",
+    "MongoDB",
+    "MySQL",
+    "REST APIs",
+    "Git"
+  ]
+}
+
   ]
 }

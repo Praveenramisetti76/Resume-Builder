@@ -101,7 +101,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-400 text-sm text-center md:text-left">
-            © {currentYear} Resume Builder. All rights reserved. Built with ❤️
+            © {currentYear} Resume Builder -Built by Praveen | Dharma  | Thapan  | saketh | junaid . 
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
