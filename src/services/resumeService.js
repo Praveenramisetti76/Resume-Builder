@@ -8,7 +8,9 @@ const resumeService = {
     try {
       const response = await axios.get(API_URL);
       return response.data;
-    } catch (error) {
+    } 
+    catch (error) 
+    {
       console.error('Error fetching resumes:', error);
       throw error;
     }
