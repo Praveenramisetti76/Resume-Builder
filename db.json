@@ -131,26 +131,15 @@
         "name": "Sagam Naveen Reddy",
         "email": "naveenreddysagam2006@gmail.com",
         "phone": "+91 6306263814",
-        "summary": "A passsionate web developer working on mern projects. Aspiring web developer. Done many projects some of them include Blood Donation system and AI Chatbot\n"
+        "summary": "\nA passionate web developer. Aspiring to become a MERN devloper."
       },
       "education": [
         {
           "degree": "B.Tech. ",
           "institution": "SRM UNIVERSITY",
           "field": "CSE",
-          "year": "2027"
-        },
-        {
-          "degree": "Intermediate",
-          "institution": "Sri Chaitanya Junior College",
-          "field": "MPC",
-          "year": "2023"
-        },
-        {
-          "degree": "SSC",
-          "institution": "Ushodaya High School",
-          "field": "",
-          "year": "2021"
+          "year": "2027",
+          "grade": "9.8"
         }
       ],
       "experience": [
@@ -182,7 +171,7 @@
       "projects": [
         {
           "title": "Blood Donation System",
-          "link": "",
+          "link": "http://github.com",
           "description": "A MERN project that allows the blood requests and donations in a efficiently. Used the React for frontend and tailwind css for styling and Express server and storing the data in the database"
         },
         {
@@ -190,6 +179,10 @@
           "link": "",
           "description": "A platform for managing the events. Includes the crud operations like planning updating and cancelling of events."
         }
+      ],
+      "achievements": [
+        "Won 1st prize in My first hack event at srm ap.",
+        "Achieved a Gold medal for getting 1st Prize in Olympics."
       ]
     }
   ]

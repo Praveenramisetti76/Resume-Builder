@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16 border-t-4 border-indigo-600">
+    <footer className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16 border-t-4 border-indigo-600">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -96,12 +96,12 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent mb-8"></div>
+        <div className="h-px bg-linear-to-r from-transparent via-indigo-500 to-transparent mb-8"></div>
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-400 text-sm text-center md:text-left">
-            © {currentYear} Resume Builder -Built by Praveen | Dharma  | Thapan  | saketh | junaid . 
+            © {currentYear} Resume Builder -Built by Praveen | Dharma  | Thapan  | saketh. 
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>

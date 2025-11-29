@@ -8,7 +8,7 @@ export default function Education({ data, setData }) {
     setData(newEdu);
   };
 
-  const addEducation = () => setData([...data, { degree: "", institution: "", field: "", year: "" }]);
+  const addEducation = () => setData([...data, { degree: "", institution: "", field: "", year: "", grade: "" }]);
 
   const removeEducation = (index) => {
     setData(data.filter((_, i) => i !== index));
@@ -56,6 +56,15 @@ export default function Education({ data, setData }) {
                   placeholder="e.g., Computer Science"
                   value={edu.field || ""}
                   onChange={(e) => handleChange(i, "field", e.target.value)}
+                  className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Grade</label>
+                <input
+                  placeholder="e.g., 3.8 GPA"
+                  value={edu.grade || ""}
+                  onChange={(e) => handleChange(i, "grade", e.target.value)}
                   className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
                 />
               </div>

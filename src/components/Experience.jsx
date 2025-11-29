@@ -19,7 +19,7 @@ export default function Experience({ data, setData }) {
       <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">💼 Work Experience</h2>
       <div className="space-y-8">
         {data.map((exp, i) => (
-          <div key={i} className="p-8 border-2 border-indigo-100 rounded-xl space-y-6 bg-gradient-to-br from-white to-indigo-50 hover:border-indigo-300 transition-colors shadow-md hover:shadow-lg">
+          <div key={i} className="p-8 border-2 border-indigo-100 rounded-xl space-y-6 bg-linear-to-br from-white to-indigo-50 hover:border-indigo-300 transition-colors shadow-md hover:shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Company *</label>
@@ -62,7 +62,7 @@ export default function Experience({ data, setData }) {
             {data.length > 1 && (
               <button
                 onClick={() => removeExperience(i)}
-                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
+                className="w-full bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <FiTrash2 size={18} /> Remove Experience
               </button>
@@ -72,7 +72,7 @@ export default function Experience({ data, setData }) {
       </div>
       <button
         onClick={addExperience}
-        className="w-full mt-8 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        className="w-full mt-8 bg-linear-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       >
         <FiPlus size={18} /> Add More Experience
       </button>

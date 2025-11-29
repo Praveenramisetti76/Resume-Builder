@@ -81,7 +81,7 @@ export default function DownloadButton({ resumeRef, fileName = "resume" }) {
       <button
         onClick={handleDownloadPDF}
         disabled={isDownloading}
-        className="flex-1 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
+        className="flex-1 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl cursor-pointer"
       >
         <FiDownload size={20} /> {isDownloading ? 'Generating...' : 'Download PDF'}
       </button>

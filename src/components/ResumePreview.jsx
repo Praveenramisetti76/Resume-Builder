@@ -1,7 +1,10 @@
 import React, { forwardRef } from "react";
 
 const ResumePreview = forwardRef(
-  ({ personal, education, experience, skills, projects }, ref) => {
+  (
+    { personal, education, experience, skills, projects, achievements },
+    ref
+  ) => {
     return (
       <div
         ref={ref}
@@ -203,6 +206,15 @@ const ResumePreview = forwardRef(
                         {edu.institution || "Institution"}
                         {edu.field && ` • ${edu.field}`}
                       </p>
+                      <p
+                        style={{
+                          color: "#404040",
+                          fontSize: "13px",
+                          margin: "0",
+                        }}
+                      >
+                        {edu.grade && `Grade: ${edu.grade}`}
+                      </p>
                     </div>
                     <span
                       style={{
@@ -220,110 +232,156 @@ const ResumePreview = forwardRef(
           </section>
         )}
 
-        {/* Projects Section */}
-        {projects.length > 0 && projects[0].title && (
-          <section style={{ marginBottom: "20px" }}>
-            <h3
-              style={{
-                fontSize: "16px",
-                fontWeight: "bold",
-                color: "#1e1b4b",
-                borderBottom: "2px solid #4f46e5",
-                paddingBottom: "8px",
-                marginBottom: "12px",
-              }}
-            >
-              🚀 Projects
-            </h3>
-
-            {projects.map((proj, i) => (
-              <div key={i} style={{ marginBottom: "12px" }}>
-                <p
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "14px",
-                    margin: 0,
-                    color: "#000",
-                  }}
-                >
-                  {proj.title || "Project Title"}
-                </p>
-
-                {proj.link && (
-                  <p
-                    style={{
-                      fontSize: "12px",
-                      color: "#4338ca",
-                      margin: "2px 0 5px 0",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    {proj.link}
-                  </p>
-                )}
-
-                {proj.description && (
-                  <p
-                    style={{
-                      fontSize: "12px",
-                      color: "#404040",
-                      margin: 0,
-                      lineHeight: "1.5",
-                    }}
-                  >
-                    {proj.description}
-                  </p>
-                )}
-              </div>
-            ))}
-          </section>
-        )}
-
         {/* Skills */}
         {skills.length > 0 && skills[0] && (
-          <section>
+          <section className="section" style={{ marginBottom: "15px" }}>
             <h3
               style={{
                 fontSize: "16px",
                 fontWeight: "bold",
                 color: "#1e1b4b",
                 borderBottom: "2px solid #4f46e5",
-                paddingBottom: "8px",
-                marginBottom: "12px",
-                margin: "0 0 12px 0",
+                paddingBottom: "6px",
+                marginBottom: "10px",
               }}
             >
               ⭐ Skills
             </h3>
-            <div
+
+            <p
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "8px",
+                fontSize: "13px",
+                color: "#444",
+                margin: 0,
+                lineHeight: "1.6",
               }}
             >
-              {skills.map(
-                (skill, i) =>
-                  skill && (
-                    <span
-                      key={i}
-                      style={{
-                        backgroundColor: "#e0e7ff",
-                        color: "#312e81",
-                        padding: "6px 12px",
-                        borderRadius: "20px",
-                        fontSize: "12px",
-                        fontWeight: "500",
-                        display: "inline-block",
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  )
-              )}
-            </div>
+              {skills.filter(Boolean).join(" • ")}
+            </p>
           </section>
         )}
+
+        {/* Projects Section */}
+        {Array.isArray(projects) &&
+          projects.length > 0 &&
+          projects[0].title && (
+            <section style={{ marginBottom: "20px" }}>
+              <h3
+                style={{
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "#1e1b4b",
+                  borderBottom: "2px solid #4f46e5",
+                  paddingBottom: "8px",
+                  marginBottom: "12px",
+                }}
+              >
+                🚀 Projects
+              </h3>
+
+              {projects.map((proj, i) => (
+                <div
+                  key={i}
+                  style={{
+                    marginBottom: "16px",
+                    position: "relative",
+                  }}
+                >
+                  {/* Title + Link Row */}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "14px",
+                        margin: 0,
+                        color: "#000",
+                      }}
+                    >
+                      {proj.title || "Project Title"}
+                    </p>
+
+                    {/* Clickable Link (top-right) */}
+                    {proj.link && (
+                      <a
+                        href={
+                          proj.link.startsWith("http")
+                            ? proj.link
+                            : `https://${proj.link}`
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: "12px",
+                          color: "#4338ca",
+                          textDecoration: "underline",
+                          marginLeft: "10px",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        Link
+                      </a>
+                    )}
+                  </div>
+
+                  {/* Description */}
+                  {proj.description && (
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        color: "#404040",
+                        marginTop: "6px",
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      {proj.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </section>
+          )}
+
+        {/* Achievements Section */}
+        {Array.isArray(achievements) &&
+          achievements.length > 0 &&
+          achievements[0] && (
+            <section style={{ marginBottom: "20px" }}>
+              <h3
+                style={{
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "#1e1b4b",
+                  borderBottom: "2px solid #4f46e5",
+                  paddingBottom: "8px",
+                  marginBottom: "12px",
+                }}
+              >
+                🏆 Achievements
+              </h3>
+
+              <ul style={{ margin: 0, paddingLeft: "18px" }}>
+                {achievements.map((item, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      fontSize: "13px",
+                      color: "#404040",
+                      marginBottom: "6px",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
       </div>
     );
   }

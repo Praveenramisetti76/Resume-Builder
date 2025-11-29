@@ -10,6 +10,7 @@ import ResumePreview from "../components/ResumePreview";
 import DownloadButton from "../components/DownloadButton";
 import resumeService from "../services/resumeService";
 import Projects from "../components/Projects";
+import Achievements from "../components/Achievements";
 
 export default function CreateEditResume() {
   const { id } = useParams();
@@ -29,6 +30,7 @@ export default function CreateEditResume() {
     experience: [{ company: "", role: "", duration: "", description: "" }],
     skills: [""],
     projects: [{ title: "", link: "", description: "" }],
+    achievements: [""],
   });
 
   const [loading, setLoading] = useState(isEdit);
@@ -173,6 +175,13 @@ export default function CreateEditResume() {
                 }
               />
 
+              <Achievements
+                data={formData.achievements}
+                setData={(newachievements) =>
+                  setFormData({ ...formData, achievements: newachievements })
+                }
+              />
+
               {/* Save Button */}
               <button
                 onClick={handleSave}
@@ -196,6 +205,7 @@ export default function CreateEditResume() {
                   experience={formData.experience}
                   skills={formData.skills}
                   projects={formData.projects}
+                  achievements={formData.achievements}
                 />
               </div>
               {isEdit && (
