@@ -4,9 +4,9 @@ import { FiArrowRight, FiZap, FiEye, FiDownload } from 'react-icons/fi';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 flex flex-col">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-indigo-50 to-purple-100 flex flex-col">
       {/* Main Content */}
-      <div className="flex-grow flex items-center justify-center px-4 py-20">
+      <div className="grow flex items-center justify-center px-4 py-20">
         <div className="max-w-5xl w-full">
           {/* Hero Section */}
           <div className="text-center mb-16">
@@ -14,7 +14,7 @@ export default function Home() {
               <span className="text-indigo-600 font-bold text-sm uppercase tracking-wide">Welcome to Resume Builder</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              📄 Create Your <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Professional Resume</span>
+              📄 Create Your <span className="bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Professional Resume</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
               Build polished resumes in minutes, not hours
@@ -51,7 +51,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link
               to="/create"
-              className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-4 px-8 rounded-full flex items-center justify-center gap-3 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="bg-linear-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-4 px-8 rounded-full flex items-center justify-center gap-3 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <FiArrowRight size={20} /> Create New Resume
             </Link>

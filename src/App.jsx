@@ -26,7 +26,7 @@ export default function App() {
           theme="light"
         />
         <Navigation />
-        <main className="flex-grow">
+        <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<CreateEditResume />} />

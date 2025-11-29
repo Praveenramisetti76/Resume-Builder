@@ -19,7 +19,7 @@ export default function Skills({ data, setData }) {
       <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">⭐ Skills</h2>
       <div className="space-y-5">
         {data.map((skill, i) => (
-          <div key={i} className="flex gap-4 items-center group p-4 rounded-lg bg-gradient-to-r from-gray-50 to-indigo-50 border border-gray-200 hover:border-indigo-300 transition-all shadow-sm hover:shadow-md">
+          <div key={i} className="flex gap-4 items-center group p-4 rounded-lg bg-linear-to-r from-gray-50 to-indigo-50 border border-gray-200 hover:border-indigo-300 transition-all shadow-sm hover:shadow-md">
             <input
               placeholder="e.g., JavaScript, React, Node.js"
               value={skill}
@@ -39,7 +39,7 @@ export default function Skills({ data, setData }) {
       </div>
       <button
         onClick={addSkill}
-        className="w-full mt-8 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        className="w-full mt-8 bg-linear-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       >
         <FiPlus size={18} /> Add Skill
       </button>

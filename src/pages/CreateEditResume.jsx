@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { FiArrowLeft, FiSave } from 'react-icons/fi';
-import { toast } from 'react-toastify';
-import PersonalInfo from '../components/Personalinfo';
-import Education from '../components/Education';
-import Experience from '../components/Experience';
-import Skills from '../components/Skills';
-import ResumePreview from '../components/ResumePreview';
-import DownloadButton from '../components/DownloadButton';
-import resumeService from '../services/resumeService';
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { FiArrowLeft, FiSave } from "react-icons/fi";
+import { toast } from "react-toastify";
+import PersonalInfo from "../components/Personalinfo";
+import Education from "../components/Education";
+import Experience from "../components/Experience";
+import Skills from "../components/Skills";
+import ResumePreview from "../components/ResumePreview";
+import DownloadButton from "../components/DownloadButton";
+import resumeService from "../services/resumeService";
+import Projects from "../components/Projects";
 
 export default function CreateEditResume() {
   const { id } = useParams();
@@ -17,16 +18,17 @@ export default function CreateEditResume() {
   const isEdit = !!id;
 
   const [formData, setFormData] = useState({
-    title: '',
+    title: "",
     personal: {
-      name: '',
-      email: '',
-      phone: '',
-      summary: '',
+      name: "",
+      email: "",
+      phone: "",
+      summary: "",
     },
-    education: [{ degree: '', institution: '', field: '', year: '' }],
-    experience: [{ company: '', role: '', duration: '', description: '' }],
-    skills: [''],
+    education: [{ degree: "", institution: "", field: "", year: "" }],
+    experience: [{ company: "", role: "", duration: "", description: "" }],
+    skills: [""],
+    projects: [{ title: "", link: "", description: "" }],
   });
 
   const [loading, setLoading] = useState(isEdit);
@@ -38,8 +40,8 @@ export default function CreateEditResume() {
       const data = await resumeService.getResumeById(id);
       setFormData(data);
     } catch {
-      toast.error('Failed to load resume');
-      navigate('/resumes');
+      toast.error("Failed to load resume");
+      navigate("/resumes");
     } finally {
       setLoading(false);
     }
@@ -53,12 +55,12 @@ export default function CreateEditResume() {
 
   const handleSave = async () => {
     if (!formData.title.trim()) {
-      toast.error('Please enter a resume title');
+      toast.error("Please enter a resume title");
       return;
     }
 
     if (!formData.personal.name.trim()) {
-      toast.error('Please enter your name');
+      toast.error("Please enter your name");
       return;
     }
 
@@ -67,14 +69,16 @@ export default function CreateEditResume() {
 
       if (isEdit) {
         await resumeService.updateResume(id, formData);
-        toast.success('Resume updated successfully');
+        toast.success("Resume updated successfully");
       } else {
         const newResume = await resumeService.createResume(formData);
-        toast.success('Resume created successfully');
+        toast.success("Resume created successfully");
         navigate(`/view/${newResume.id}`);
       }
     } catch {
-      toast.error(isEdit ? 'Failed to update resume' : 'Failed to create resume');
+      toast.error(
+        isEdit ? "Failed to update resume" : "Failed to create resume"
+      );
     } finally {
       setSaving(false);
     }
@@ -89,16 +93,18 @@ export default function CreateEditResume() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100 py-8 px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-gray-50 to-gray-100 py-8 px-4">
       <div className="max-w-full mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4 max-w-7xl mx-auto">
           <div className="flex-1">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-              {isEdit ? '✏️ Edit Resume' : '📝 Create Resume'}
+              {isEdit ? "✏️ Edit Resume" : "📝 Create Resume"}
             </h1>
             <p className="text-gray-600 mt-3 text-lg">
-              {isEdit ? 'Update your professional profile' : 'Build your professional resume in minutes'}
+              {isEdit
+                ? "Update your professional profile"
+                : "Build your professional resume in minutes"}
             </p>
           </div>
           <div className="flex gap-3 w-full sm:w-auto">
@@ -119,7 +125,9 @@ export default function CreateEditResume() {
           <input
             type="text"
             value={formData.title}
-            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
             placeholder="e.g., Senior Developer Resume 2024"
             className="w-full px-5 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all text-base"
           />
@@ -158,33 +166,43 @@ export default function CreateEditResume() {
                 }
               />
 
+              <Projects
+                data={formData.projects}
+                setData={(newprojects) =>
+                  setFormData({ ...formData, projects: newprojects })
+                }
+              />
+
               {/* Save Button */}
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 disabled:from-gray-400 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="w-full bg-linear-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 disabled:from-gray-400 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <FiSave size={20} /> {saving ? 'Saving...' : 'Save & Continue'}
+                <FiSave size={20} /> {saving ? "Saving..." : "Save & Continue"}
               </button>
             </div>
 
             {/* Preview Section - Right Side */}
             <div className="h-fit sticky top-24 lg:top-32">
               <div className="bg-white rounded-2xl shadow-2xl p-6 max-h-[calc(100vh-200px)] overflow-y-auto border-2 border-gray-100 hover:shadow-3xl transition-shadow">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">📄 Live Preview</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  📄 Live Preview
+                </h2>
                 <ResumePreview
                   ref={resumeRef}
                   personal={formData.personal}
                   education={formData.education}
                   experience={formData.experience}
                   skills={formData.skills}
+                  projects={formData.projects}
                 />
               </div>
               {isEdit && (
                 <div className="mt-6">
                   <DownloadButton
                     resumeRef={resumeRef}
-                    fileName={formData.title || 'resume'}
+                    fileName={formData.title || "resume"}
                   />
                 </div>
               )}

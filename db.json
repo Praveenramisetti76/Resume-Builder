@@ -123,6 +123,74 @@
         "HTML",
         "CSS"
       ]
+    },
+    {
+      "id": "b302",
+      "title": "Naveen Resume",
+      "personal": {
+        "name": "Sagam Naveen Reddy",
+        "email": "naveenreddysagam2006@gmail.com",
+        "phone": "+91 6306263814",
+        "summary": "A passsionate web developer working on mern projects. Aspiring web developer. Done many projects some of them include Blood Donation system and AI Chatbot\n"
+      },
+      "education": [
+        {
+          "degree": "B.Tech. ",
+          "institution": "SRM UNIVERSITY",
+          "field": "CSE",
+          "year": "2027"
+        },
+        {
+          "degree": "Intermediate",
+          "institution": "Sri Chaitanya Junior College",
+          "field": "MPC",
+          "year": "2023"
+        },
+        {
+          "degree": "SSC",
+          "institution": "Ushodaya High School",
+          "field": "",
+          "year": "2021"
+        }
+      ],
+      "experience": [
+        {
+          "company": "HCL TECH.",
+          "role": "Software Intern",
+          "duration": "May 2025 - July 2025",
+          "description": "Worked on the different projects in the mern stack "
+        },
+        {
+          "company": "Edunet Foundation",
+          "role": "Full stack intern",
+          "duration": "June 2025 - Aug 2025",
+          "description": ""
+        }
+      ],
+      "skills": [
+        "Javascript",
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Python",
+        "SQL",
+        "Java",
+        "C++",
+        "C"
+      ],
+      "projects": [
+        {
+          "title": "Blood Donation System",
+          "link": "",
+          "description": "A MERN project that allows the blood requests and donations in a efficiently. Used the React for frontend and tailwind css for styling and Express server and storing the data in the database"
+        },
+        {
+          "title": "Event Management System",
+          "link": "",
+          "description": "A platform for managing the events. Includes the crud operations like planning updating and cancelling of events."
+        }
+      ]
     }
   ]
 }
