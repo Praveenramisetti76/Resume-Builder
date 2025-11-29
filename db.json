@@ -79,6 +79,50 @@
         "express.js",
         "Machine Learning"
       ]
+    },
+    {
+      "id": "0111",
+      "title": "Dharma Resume",
+      "personal": {
+        "name": "Pamarthi Dharma Teja Mani Chandu",
+        "email": "dharmatejapamarthi143@gmail.com",
+        "phone": "+91 9346312961",
+        "summary": ""
+      },
+      "education": [
+        {
+          "degree": "B.Tech.",
+          "institution": "SRM UNIVERSITY AP",
+          "field": "Computer Science and Engineering",
+          "year": "2027"
+        },
+        {
+          "degree": "M.Tech.",
+          "institution": "IIT Bombay",
+          "field": "Comuter Science",
+          "year": "2029"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Edunet Foundation",
+          "role": "Full Stack Developer",
+          "duration": "June 2025 - Aug - 2025",
+          "description": "Worked on the MERN Stack Projects and created the Resume Builder Project."
+        }
+      ],
+      "skills": [
+        "Javascript",
+        "React",
+        "Node.js",
+        "Express.js",
+        "Git",
+        "MongoDB",
+        "Java",
+        "Python",
+        "HTML",
+        "CSS"
+      ]
     }
   ]
 }
