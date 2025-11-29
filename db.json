@@ -59,6 +59,12 @@
           "role": "Software Developer",
           "duration": "2023-Present",
           "description": "Worked on developing scalable web applications, integrating APIs, optimizing front-end performance, and collaborating with cross-functional teams to deliver high-quality software solutions."
+        },
+        {
+          "company": "Edunet Foundation",
+          "role": "Full Stack Developer",
+          "duration": "May 2025 - July 2025",
+          "description": "Worked on the developing of full stack projects"
         }
       ],
       "skills": [
@@ -69,39 +75,9 @@
         "MongoDB",
         "MySQL",
         "REST APIs",
-        "Git"
-      ]
-    },
-    {
-      "id": "5d75",
-      "title": "Full Stack Developer Resume 2025",
-      "personal": {
-        "name": "Praveen Ramisetti",
-        "email": "praveen_ramisetti@srmap.edu.in",
-        "phone": "+919542595920",
-        "summary": "Innovative Senior Full Stack Developer with 7+ years of experience in building scalable web applications. Proven track record of improving system performance and leading agile teams. Passionate about cloud architecture and open-source contribution."
-      },
-      "education": [
-        {
-          "degree": "B Tech",
-          "institution": "SRM University",
-          "field": "Computer Science",
-          "year": "2027"
-        }
-      ],
-      "experience": [
-        {
-          "company": "Addwise ",
-          "role": "MERN Stack Intern",
-          "duration": "May-Aug 2025",
-          "description": "• Led a team of 5 developers to migrate a monolithic legacy app to a microservices architecture using Node.js and Docker. • Reduced server response time by 40% by optimizing database queries and implementing Redis caching. • Collaborated with product managers to define feature roadmaps and technical specifications."
-        }
-      ],
-      "skills": [
-        "JavaScript ",
-        "Node Js",
-        "React Js",
-        "Mongo DB"
+        "Git",
+        "express.js",
+        "Machine Learning"
       ]
     }
   ]
