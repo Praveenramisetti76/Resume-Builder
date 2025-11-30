@@ -13,7 +13,7 @@ export default function PersonalInfo({ data, setData }) {
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Full Name *</label>
+            <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Full Name</label>
             <input
               type="text"
               name="name"
@@ -25,7 +25,7 @@ export default function PersonalInfo({ data, setData }) {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Email *</label>
+            <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Email</label>
             <input
               type="email"
               name="email"
@@ -38,7 +38,7 @@ export default function PersonalInfo({ data, setData }) {
         </div>
 
         <div>
-          <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Phone Number *</label>
+          <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Phone Number</label>
           <input
             type="tel"
             name="phone"

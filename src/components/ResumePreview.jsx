@@ -271,7 +271,7 @@ export default function ResumePreview({
       )}
 
       {/* Projects */}
-      {Array.isArray(projects) && projects.length > 0 && projects[0].title && (
+      {projects.length > 0 && projects[0].title && (
         <section style={{ marginBottom: "10px" }}>
           <h3
             style={{
@@ -317,7 +317,7 @@ export default function ResumePreview({
       )}
 
       {/* Achievements */}
-      {Array.isArray(achievements) && achievements.length > 0 && achievements[0] && (
+      {achievements.length > 0 && achievements[0] && (
         <section style={{ marginBottom: "10px" }}>
           <h3
             style={{

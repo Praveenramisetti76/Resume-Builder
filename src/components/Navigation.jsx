@@ -10,11 +10,11 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 shadow-lg sticky top-0 z-50 border-b-4 border-indigo-700">
+    <nav className="bg-linear-to-r from-indigo-600 via-indigo-500 to-purple-600 shadow-lg sticky top-0 z-50 border-b-4 border-indigo-700">
       <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 text-3xl font-bold text-white hover:text-indigo-100 transition-colors duration-300">
-            📄 <span className="bg-gradient-to-r from-white to-indigo-50 bg-clip-text text-transparent">Resume Builder</span>
+            📄 <span className="bg-linear-to-r from-white to-indigo-50 bg-clip-text text-transparent">Resume Builder</span>
           </Link>
 
           <div className="flex items-center gap-10">

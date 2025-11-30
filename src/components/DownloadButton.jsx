@@ -18,6 +18,8 @@ export default function DownloadButton({ fileName = "resume" }) {
     try {
       setIsDownloading(true);
       toast.info("Generating PDF... Please wait");
+
+      // Convert HTML to Canvas
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
@@ -26,7 +28,7 @@ export default function DownloadButton({ fileName = "resume" }) {
       });
 
       const imgData = canvas.toDataURL("image/png");
-      const pdfWidth = 210; 
+      const pdfWidth = 210; // A4 width in mm
       const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
       const pdf = new jsPDF({
@@ -35,13 +37,15 @@ export default function DownloadButton({ fileName = "resume" }) {
         format: "a4",
       });
 
-      const pageHeight = 297; 
+      const pageHeight = 297; // A4 height in mm
       let heightLeft = pdfHeight;
       let position = 0;
 
+      // First page
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       heightLeft -= pageHeight;
 
+      // Additional pages if needed
       while (heightLeft > 0) {
         position = heightLeft - pdfHeight;
         pdf.addPage();
@@ -49,6 +53,7 @@ export default function DownloadButton({ fileName = "resume" }) {
         heightLeft -= pageHeight;
       }
 
+      // Clean file name
       const cleanFileName =
         fileName
           .trim()

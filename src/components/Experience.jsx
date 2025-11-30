@@ -22,7 +22,7 @@ export default function Experience({ data, setData }) {
           <div key={i} className="p-8 border-2 border-indigo-100 rounded-xl space-y-6 bg-linear-to-br from-white to-indigo-50 hover:border-indigo-300 transition-colors shadow-md hover:shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Company *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Company</label>
                 <input
                   placeholder="e.g., Tech Company Inc."
                   value={exp.company}
@@ -31,7 +31,7 @@ export default function Experience({ data, setData }) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Job Title *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Job Title</label>
                 <input
                   placeholder="e.g., Senior Developer"
                   value={exp.role}
@@ -41,7 +41,7 @@ export default function Experience({ data, setData }) {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Duration *</label>
+              <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Duration</label>
               <input
                 placeholder="e.g., Jan 2022 - Present"
                 value={exp.duration}

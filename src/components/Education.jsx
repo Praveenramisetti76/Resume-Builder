@@ -22,7 +22,7 @@ export default function Education({ data, setData }) {
           <div key={i} className="p-8 border-2 border-green-100 rounded-xl space-y-6 bg-linear-to-br from-white to-green-50 hover:border-green-300 transition-colors shadow-md hover:shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Degree *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Degree</label>
                 <input
                   placeholder="e.g., Bachelor of Science"
                   value={edu.degree}
@@ -31,7 +31,7 @@ export default function Education({ data, setData }) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Graduation Year *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Graduation Year</label>
                 <input
                   placeholder="e.g., 2020"
                   value={edu.year}
@@ -42,7 +42,7 @@ export default function Education({ data, setData }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Institution *</label>
+                <label className="block text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide">Institution</label>
                 <input
                   placeholder="e.g., Tech University"
                   value={edu.institution}
