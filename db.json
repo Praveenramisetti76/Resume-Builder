@@ -140,6 +140,13 @@
           "field": "CSE",
           "year": "2027",
           "grade": "9.8"
+        },
+        {
+          "degree": "Intermediate",
+          "institution": "Sri Chaitanya Junior College",
+          "field": "MPC",
+          "year": "2021",
+          "grade": "95.8%"
         }
       ],
       "experience": [
@@ -165,8 +172,8 @@
         "Python",
         "SQL",
         "Java",
-        "C++",
-        "C"
+        "C",
+        "C++"
       ],
       "projects": [
         {
