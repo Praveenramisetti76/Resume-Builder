@@ -1,6 +1,3 @@
-// Alternative PDF Download Method (if needed)
-// This is a backup method if html2canvas fails
-
 import { jsPDF } from "jspdf";
 export function downloadPDFAlternative(resumeRef, fileName) {
   try {

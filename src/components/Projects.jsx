@@ -26,7 +26,7 @@ export default function Projects({ data, setData }) {
       </h2>
 
       <div className="space-y-6">
-        {data.map((project, index) => (
+        {Array.isArray(data) && data.map((project, index) => (
           <div key={index} className="p-4 rounded-xl bg-gray-50 border shadow-sm">
             <input
               placeholder="Project Title"
