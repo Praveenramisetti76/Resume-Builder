@@ -53,15 +53,7 @@ export default function DownloadButton({ fileName = "resume" }) {
         heightLeft -= pageHeight;
       }
 
-      // Clean file name
-      const cleanFileName =
-        fileName
-          .trim()
-          .replace(/[^a-z0-9\s]/gi, "")
-          .replace(/\s+/g, "_")
-          .toLowerCase() || "resume";
-
-      pdf.save(`${cleanFileName}.pdf`);
+      pdf.save(`${fileName || "resume"}.pdf`);
 
       toast.success("✅ Resume downloaded successfully!");
     } catch (error) {

@@ -39,7 +39,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100 py-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-gray-50 to-gray-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6">
@@ -49,7 +49,7 @@ export default function Dashboard() {
           </div>
           <Link
             to="/create"
-            className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-8 rounded-full flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-linear-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-8 rounded-full flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <FiPlus size={20} /> Create New
           </Link>
@@ -81,7 +81,7 @@ export default function Dashboard() {
             <p className="text-gray-500 mb-8 text-lg">Start building your first resume today!</p>
             <Link
               to="/create"
-              className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-8 rounded-full inline-flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="bg-linear-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 px-8 rounded-full inline-flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <FiPlus size={20} /> Create Your First Resume
             </Link>
@@ -96,7 +96,7 @@ export default function Dashboard() {
                 key={resume.id}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 transform hover:-translate-y-2 group"
               >
-                <div className="h-2 bg-gradient-to-r from-indigo-600 to-purple-600"></div>
+                <div className="h-2 bg-linear-to-r from-indigo-600 to-purple-600"></div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 line-clamp-2 group-hover:text-indigo-600 transition-colors">
                     {resume.title}
