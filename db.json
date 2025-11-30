@@ -1,96 +1,6 @@
 {
   "resumes": [
     {
-      "id": "2",
-      "title": "Praveen Ramisetti Resume",
-      "personal": {
-        "name": "Praveen Ramisetti",
-        "email": "praveenr76am@gmail.com",
-        "phone": "+91-98765-43210",
-        "summary": "Passionate and dedicated developer with hands-on experience in building modern web applications, real-time systems, and AI-integrated solutions."
-      },
-      "education": [
-        {
-          "id": 1,
-          "degree": "Bachelor of Technology",
-          "institution": "Your University Name",
-          "field": "Computer Science and Engineering",
-          "year": "202X"
-        }
-      ],
-      "experience": [
-        {
-          "id": 1,
-          "company": "Addwise Tech",
-          "role": "Software Developer",
-          "duration": "2023-Present",
-          "description": "Worked on developing scalable web applications, integrating APIs, optimizing front-end performance, and collaborating with cross-functional teams to deliver high-quality software solutions."
-        },
-        {
-          "company": "Edunet Foundation",
-          "role": "Full Stack Developer",
-          "duration": "May 2025 - July 2025",
-          "description": "Worked on the developing of full stack projects"
-        }
-      ],
-      "skills": [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Python",
-        "MongoDB",
-        "MySQL",
-        "REST APIs",
-        "Git",
-        "express.js",
-        "Machine Learning"
-      ]
-    },
-    {
-      "id": "0111",
-      "title": "Dharma Resume",
-      "personal": {
-        "name": "Pamarthi Dharma Teja Mani Chandu",
-        "email": "dharmatejapamarthi143@gmail.com",
-        "phone": "+91 9346312961",
-        "summary": ""
-      },
-      "education": [
-        {
-          "degree": "B.Tech.",
-          "institution": "SRM UNIVERSITY AP",
-          "field": "Computer Science and Engineering",
-          "year": "2027"
-        },
-        {
-          "degree": "M.Tech.",
-          "institution": "IIT Bombay",
-          "field": "Comuter Science",
-          "year": "2029"
-        }
-      ],
-      "experience": [
-        {
-          "company": "Edunet Foundation",
-          "role": "Full Stack Developer",
-          "duration": "June 2025 - Aug - 2025",
-          "description": "Worked on the MERN Stack Projects and created the Resume Builder Project."
-        }
-      ],
-      "skills": [
-        "Javascript",
-        "React",
-        "Node.js",
-        "Express.js",
-        "Git",
-        "MongoDB",
-        "Java",
-        "Python",
-        "HTML",
-        "CSS"
-      ]
-    },
-    {
       "id": "b302",
       "title": "Naveen Resume",
       "personal": {
@@ -197,6 +107,46 @@
       ],
       "achievements": [
         "fdfsf"
+      ]
+    },
+    {
+      "id": "fd84",
+      "title": "Praveen Resume",
+      "personal": {
+        "name": "Praveen Ramisetti",
+        "email": "praveenramisetti76@gmail.com",
+        "phone": "+919542595920",
+        "summary": "student at srm universtity ap"
+      },
+      "education": [
+        {
+          "degree": "betech",
+          "institution": "srmap",
+          "field": "cse",
+          "year": "2027",
+          "grade": "9.5"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Addwise Innovations",
+          "role": "MERN Stack devloper",
+          "duration": "May- july 2025",
+          "description": "worked on project"
+        }
+      ],
+      "skills": [
+        "js"
+      ],
+      "projects": [
+        {
+          "title": "project1",
+          "link": "",
+          "description": "project description1"
+        }
+      ],
+      "achievements": [
+        "no achiements"
       ]
     }
   ]
