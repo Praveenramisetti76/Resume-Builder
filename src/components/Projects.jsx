@@ -11,7 +11,7 @@ export default function Projects({ data, setData }) {
   const addProject = () => {
     setData([
       ...data,
-      { title: "", link: "", description: "" }
+      { title: "", description: "" }
     ]);
   };
 
@@ -34,14 +34,7 @@ export default function Projects({ data, setData }) {
               onChange={(e) => handleChange(index, "title", e.target.value)}
               className="w-full px-4 py-3 mb-3 rounded-lg border focus:ring-2 focus:ring-indigo-400"
             />
-
-            <input
-              placeholder="Project Link (Optional)"
-              value={project.link}
-              onChange={(e) => handleChange(index, "link", e.target.value)}
-              className="w-full px-4 py-3 mb-3 rounded-lg border focus:ring-2 focus:ring-indigo-400"
-            />
-
+            
             <textarea
               placeholder="Project Description"
               value={project.description}
