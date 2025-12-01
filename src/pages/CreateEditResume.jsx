@@ -36,7 +36,6 @@ export default function CreateEditResume() {
   const [loading, setLoading] = useState(isEdit);
   const [saving, setSaving] = useState(false);
 
-  // LOAD RESUME (no useCallback needed)
   const loadResume = async () => {
     try {
       setLoading(true);
@@ -50,12 +49,10 @@ export default function CreateEditResume() {
     }
   };
 
-  // Run on page load in edit mode
   useEffect(() => {
     if (isEdit) loadResume();
   }, [isEdit]);
 
-  // SAVE function
   const handleSave = async () => {
     if (!formData.title.trim()) {
       toast.error("Please enter a resume title");
@@ -85,7 +82,6 @@ export default function CreateEditResume() {
     }
   };
 
-  // LOADING SCREEN
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">

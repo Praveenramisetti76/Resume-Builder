@@ -9,7 +9,6 @@ export default function Footer() {
     <footer className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16 border-t-4 border-indigo-600">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
           <div className="col-span-1">
             <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-white hover:text-indigo-400 transition-colors mb-4">
               📄 Resume Builder
@@ -19,7 +18,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
@@ -44,7 +42,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Features */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
@@ -63,7 +60,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
@@ -71,7 +67,7 @@ export default function Footer() {
             </h4>
             <div className="flex gap-4 flex-wrap">
               <a
-                href="mailto:contact@resumebuilder.com"
+                href="#"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 title="Email"
               >
@@ -95,10 +91,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-linear-to-r from-transparent via-indigo-500 to-transparent mb-8"></div>
 
-        {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-400 text-sm text-center md:text-left">
             © {currentYear} Resume Builder -Built by Praveen | Dharma  | Thapan  | saketh. 

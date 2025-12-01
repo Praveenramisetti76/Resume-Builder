@@ -62,7 +62,6 @@ export default function ViewResume() {
     <div className="min-h-screen bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
 
-        {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
           <div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
@@ -90,7 +89,6 @@ export default function ViewResume() {
           </div>
         </div>
 
-        {/* Back Button */}
         <Link
           to="/resumes"
           className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 mb-8 font-semibold text-lg hover:gap-3 transition-all"
@@ -98,7 +96,6 @@ export default function ViewResume() {
           <FiArrowLeft size={18} /> Back to Dashboard
         </Link>
 
-        {/* Resume Content */}
         <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8 border border-gray-200 hover:shadow-3xl transition-shadow">
           <ResumePreview
             personal={resume.personal}
@@ -110,7 +107,6 @@ export default function ViewResume() {
           />
         </div>
 
-        {/* Download Button */}
         <div className="sticky bottom-6">
           <DownloadButton fileName={resume.title} />
         </div>

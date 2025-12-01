@@ -55,7 +55,6 @@ export default function Dashboard() {
           </Link>
         </div>
 
-        {/* Back Button */}
         <Link
           to="/"
           className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 mb-8 font-semibold text-lg transition-colors duration-300"
@@ -63,7 +62,6 @@ export default function Dashboard() {
           <FiArrowLeft /> Back to Home
         </Link>
 
-        {/* Loading State */}
         {loading && (
           <div className="text-center py-20">
             <div className="inline-block">
@@ -73,7 +71,6 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Empty State */}
         {!loading && resumes.length === 0 && (
           <div className="bg-white rounded-2xl shadow-lg p-16 text-center border border-gray-100">
             <div className="text-6xl mb-6">📄</div>
@@ -88,7 +85,6 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Resumes Grid */}
         {!loading && resumes.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resumes.map((resume) => (
