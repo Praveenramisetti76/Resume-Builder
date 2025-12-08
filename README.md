@@ -206,14 +206,5 @@ The app is configured to work with JSON-Server on localhost. For production depl
 - Resume version history
 - ATS optimization suggestions
 
-## 📄 License
 
-This project is open source and available under the MIT License.
 
-## 👨‍💻 Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit pull requests.
-
-## 📞 Support
-
-For issues or questions, please create an issue in the repository or contact the development team.
