@@ -1,25 +1,25 @@
-# 📄 Resume Builder
+#  Resume Builder
 
 A professional, full-featured Resume Builder web application built with React.js that allows users to create, manage, and download resumes in PDF format. The app provides a clean, responsive interface with real-time preview and complete CRUD operations.
-## 🔗 Project Resources
+##  Project Resources
 <sub>**[Report](https://drive.google.com/file/d/1JW3TzeDBqnVWhZWIPGTnOb5SQA0lUEVg/view)**</sub> 
 
 <sub> **[Project Demonstration](https://drive.google.com/file/d/1UJBWwk0uH8r2iGkSng5Xn7uJQ6ZhHUrM/view)**</sub> 
 
 <sub> **[Code Explanation](https://drive.google.com/file/d/1WBBTfBsIVZL1B8dS9MzCx7xD-Fuw-mdF/view)**</sub> 
-## ✨ Features
+##  Features
 
-- **📝 Create & Edit Resumes**: Easy-to-use form-based interface to enter personal details, education, experience, and skills
-- **👁️ Live Preview**: Real-time resume preview as you type
-- **📥 Download PDF**: Export resumes as professional PDF files
-- **💾 Save Multiple Resumes**: Store multiple resumes with different titles
-- **✏️ Edit Resumes**: Update and modify saved resumes anytime
-- **🗑️ Delete Resumes**: Remove resumes you no longer need
-- **📱 Fully Responsive**: Works seamlessly on desktop, tablet, and mobile devices
-- **🎨 Professional Templates**: Clean, modern resume templates with professional formatting
-- **🔔 Real-time Notifications**: Toast notifications for user feedback
+- ** Create & Edit Resumes**: Easy-to-use form-based interface to enter personal details, education, experience, and skills
+- ** Live Preview**: Real-time resume preview as you type
+- ** Download PDF**: Export resumes as professional PDF files
+- ** Save Multiple Resumes**: Store multiple resumes with different titles
+- ** Edit Resumes**: Update and modify saved resumes anytime
+- ** Delete Resumes**: Remove resumes you no longer need
+- ** Fully Responsive**: Works seamlessly on desktop, tablet, and mobile devices
+- ** Professional Templates**: Clean, modern resume templates with professional formatting
+- ** Real-time Notifications**: Toast notifications for user feedback
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Frontend**: React 19.1.1 with React Router DOM
 - **Styling**: Tailwind CSS 4.1.16
@@ -31,7 +31,7 @@ A professional, full-featured Resume Builder web application built with React.js
 - **Notifications**: React Toastify
 - **Build Tool**: Vite
 
-## 📋 Project Structure
+##  Project Structure
 
 ```
 resume-builder/
@@ -61,7 +61,7 @@ resume-builder/
 └── README.md
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -92,7 +92,7 @@ resume-builder/
    ```
    The app will be available at `http://localhost:5173`
 
-## 📚 Usage
+##  Usage
 
 ### Creating a Resume
 
@@ -117,7 +117,7 @@ resume-builder/
 1. Open or Edit a resume
 2. Click **"Download PDF"** button to export as PDF
 
-## 🎨 UI/UX Features
+##  UI/UX Features
 
 - **Responsive Design**: Mobile-first approach with breakpoints for tablets and desktops
 - **Intuitive Forms**: Clear labels, helpful placeholders, and organized sections
@@ -127,7 +127,7 @@ resume-builder/
 - **Sticky Navigation**: Easy access to navigation from any page
 - **Loading States**: Smooth loading indicators during data fetching
 
-## 🔧 API Endpoints (JSON-Server)
+##  API Endpoints (JSON-Server)
 
 The app uses the following API endpoints:
 
@@ -137,7 +137,7 @@ The app uses the following API endpoints:
 - `PUT /resumes/:id` - Update a resume
 - `DELETE /resumes/:id` - Delete a resume
 
-## 📦 Available Scripts
+##  Available Scripts
 
 ```bash
 # Start development server
@@ -156,7 +156,7 @@ npm run server
 npm run lint
 ```
 
-## 🎯 CRUD Operations
+##  CRUD Operations
 
 The application implements complete CRUD functionality:
 
@@ -165,13 +165,13 @@ The application implements complete CRUD functionality:
 - **Update (U)**: Edit existing resumes and save changes
 - **Delete (D)**: Remove resumes permanently
 
-## 🌐 Responsive Breakpoints
+##  Responsive Breakpoints
 
 - **Mobile**: < 640px (single column layout)
 - **Tablet**: 640px - 1024px (adjusted spacing)
 - **Desktop**: > 1024px (full multi-column layout)
 
-## 🎨 Color Scheme
+##  Color Scheme
 
 - **Primary**: Indigo (#4f46e5)
 - **Success**: Green (#10b981)
@@ -179,15 +179,15 @@ The application implements complete CRUD functionality:
 - **Background**: Light gray (#f9fafb)
 - **Text**: Gray (#111827, #4b5563)
 
-## 🔐 Data Storage
+##  Data Storage
 
 All resume data is stored in a JSON database (`db.json`) via JSON-Server. The data persists between sessions.
 
-## 📝 Sample Resume Data
+##  Sample Resume Data
 
 The `db.json` file comes with a sample resume to demonstrate the structure and features.
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Port Already in Use
 If port 5000 or 5173 is already in use:
@@ -201,7 +201,7 @@ json-server --watch db.json --port 3001
 ### CORS Issues
 The app is configured to work with JSON-Server on localhost. For production deployment, ensure proper CORS headers are set.
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 - User authentication and cloud storage
 - Multiple resume templates
@@ -212,4 +212,4 @@ The app is configured to work with JSON-Server on localhost. For production depl
 - ATS optimization suggestions
 
 
-
+----------------Thank you ------------------------------------
