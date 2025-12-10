@@ -1,10 +1,23 @@
 # 📄 Resume Builder
 
 A professional, full-featured Resume Builder web application built with React.js that allows users to create, manage, and download resumes in PDF format. The app provides a clean, responsive interface with real-time preview and complete CRUD operations.
+## 🔗 Project Resources
 
-## report link: https://drive.google.com/file/d/1JW3TzeDBqnVWhZWIPGTnOb5SQA0lUEVg/view
-# project demonstration link: https://drive.google.com/file/d/1UJBWwk0uH8r2iGkSng5Xn7uJQ6ZhHUrM/view
-# project code explanation links: https://drive.google.com/file/d/1WBBTfBsIVZL1B8dS9MzCx7xD-Fuw-mdF/view
+<sub>
+📄 **Report**:  
+https://drive.google.com/file/d/1JW3TzeDBqnVWhZWIPGTnOb5SQA0lUEVg/view  
+</sub>
+
+<sub>
+🎥 **Project Demonstration Video**:  
+https://drive.google.com/file/d/1UJBWwk0uH8r2iGkSng5Xn7uJQ6ZhHUrM/view  
+</sub>
+
+<sub>
+🧠 **Project Code Explanation**:  
+https://drive.google.com/file/d/1WBBTfBsIVZL1B8dS9MzCx7xD-Fuw-mdF/view  
+</sub>
+
 ## ✨ Features
 
 - **📝 Create & Edit Resumes**: Easy-to-use form-based interface to enter personal details, education, experience, and skills
